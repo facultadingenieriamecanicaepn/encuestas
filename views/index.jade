@@ -1,5 +1,831 @@
-extends layout
+doctype html
 
-block content
-  h1= title
-  p Welcome to #{title}
+html.
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>FIM-Encuestas</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="./stylesheets/landing-page.css" rel="stylesheet">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">FIM - Encuestas</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#acerca">Acerca de las encuestas</a>
+                    </li>
+                    <li>
+                        <a href="#encuesta">Hacer encuesta</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav> 
+    <a name="acerca"></a>
+    <div class="intro-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="intro-message">
+              <h1>Encuestas</h1>
+              <h3>Siempre queremos lo mejor para ti, por eso deseamos crecer y mantenernos en la vanguardia, tus opiniones nos ayudan a brindarte la mejor experiencia, por eso te invitamos a que nos des tus pautas para mejorar.</h3>
+              <hr class="intro-divider">
+              <ul class="list-inline intro-social-buttons">
+                <li>
+                  <a href="https://www.facebook.com/groups/lamejorfacultaddelmundo/?fref=ts" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Facebook</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- /.container -->
+    </div>
+
+    <a  name="encuesta"></a>
+    <div class="content-section-a">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-sm-6">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+            <h2 class="section-heading">Qué son y para qué son las Encuestas?</h2>
+            <p class="lead" align='justify'>Las encuestas son la manera más viable para retroalimentarnos de las necesidades, tanto de los estudiantes, como las laborales, con la finalidad de ofrecerte siempre lo mejor.</p>
+          </div>
+          <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+            <img class="img-responsive" src="./img/ipad.png" alt="">
+          </div>
+          <!--
+          <ul class="pager">
+            <li class="">
+              <a href="#datos">Hacer encuesta &rarr;</a>
+            </li>
+          </ul>
+          -->
+
+          <form name="sentMessage" id="contactForm" novalidate action="/question" method="post">
+                    <a name="datos"></a>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name." name="Nombre">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Dirección Email</label>
+                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address." name="Email">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Numero telefonico de contacto</label>
+                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number." name='Tel'>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Tipo de empresa</label>
+                            <div class="radio" align="center">
+                              <br><input type="radio" name="EmpresaTipoPP" value="publica">Publica</br>
+                              <br><input type="radio" name="EmpresaTipoPP" value="privada">Privada</br>   
+                              <p class="help-block text-danger"></p>                    
+                            </div>
+                            <hr class="intro-divider">
+                            <div class="radio" align="center">
+                              <br><input type="radio" name="EmpresaTipo" value="Industrial">Industrial</br>
+                              <br><input type="radio" name="EmpresaTipo" value="Comercial">Comercial</br>   
+                              <br><input type="radio" name="EmpresaTipo" value="Servicios">Servicios</br>
+                              <br><input type="radio" name="EmpresaTipo" value="Financiera">Financiera</br>
+                              <br><input type="radio" name="EmpresaTipo" value="Otros">Otros</br> 
+                              <p class="help-block text-danger"></p>                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Descripción de la actividad</label>
+                            <textarea rows="5" class="form-control" placeholder="Sector" id="message" required data-validation-required-message="Please enter a message." name="DescriptActividad"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    
+                    <a name="p_uno"></a>
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <label>
+                        <p><h2 align="justify">Queremos conocer con la mayor precisión posible, las funciones de trabajo que realizan los Ingenieros Mecánicos  en la empresa.</h2>
+                        </p>
+                        <p>
+                        Por favor marque el casillero que corresponda a la importancia que en su trabajo tiene cada función de trabajo  que se señala a continuación:
+                        </p>
+                        <p>
+                        Importancia:
+                        <ul>
+                          <li>0 No existe esa tarea</li>
+                          <li>1 Mínima</li>
+                          <li>2 Poco importante</li>
+                          <li>3 Importante</li>
+                          <li>4 Muy importante</li>
+                        </ul>
+                        </p>
+                      </label>
+                        <label><h2>Calcular, seleccionar, dimensionar y diseñar elementos y sistemas mecánicos</h2></label>
+                        <label>1.1 Realizar el análisis funcional de elementos y sistemas mecánicos</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_1" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_1" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_1" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_1" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_1" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>1.2 Identificar las deformaciones y los esfuerzos internos que se producen en elementos mecánicos sometidos a condiciones de carga.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_2" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_2" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_2" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_2" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_2" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>1.3 Calcular las deformaciones y los esfuerzos internos que se producen en elementos mecánicos sometidos a condiciones de carga.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_3" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_3" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_3" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_3" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_3" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>1.4 Seleccionar elementos de máquinas de aplicación general.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_4" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_4" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_4" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_4" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_4" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>1.5 Calcular y dimensionar elementos de máquinas de aplicación general.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_5" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_5" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_5" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_5" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_5" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>1.6 Diseñar elementos y sistemas mecánicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_1_6" value="0">0</br>
+                          <br><input type="radio" name="pregunta_1_6" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_1_6" value="2">2</br>
+                          <br><input type="radio" name="pregunta_1_6" value="3">3</br>
+                          <br><input type="radio" name="pregunta_1_6" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_dos"></a>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label><h2>Seleccionar implementar y controlar procesos de fabricación industrial de piezas o elementos y seleccionar los materiales adecuados.</h2></label>
+                        <label>2.1 Seleccionar los procesos de fabricación industrial de piezas o elementos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_2_1" value="0">0</br>
+                          <br><input type="radio" name="pregunta_2_1" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_2_1" value="2">2</br>
+                          <br><input type="radio" name="pregunta_2_1" value="3">3</br>
+                          <br><input type="radio" name="pregunta_2_1" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>2.2 Implementar los procesos de fabricación industrial de piezas o elementos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_2_2" value="0">0</br>
+                          <br><input type="radio" name="pregunta_2_2" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_2_2" value="2">2</br>
+                          <br><input type="radio" name="pregunta_2_2" value="3">3</br>
+                          <br><input type="radio" name="pregunta_2_2" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>2.3 Controlar los procesos de fabricación industrial de piezas o elementos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_2_3" value="0">0</br>
+                          <br><input type="radio" name="pregunta_2_3" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_2_3" value="2">2</br>
+                          <br><input type="radio" name="pregunta_2_3" value="3">3</br>
+                          <br><input type="radio" name="pregunta_2_3" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>2.4 Seleccionar el material más adecuado para una determinada aplicación de ingeniería mecánica.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_2_4" value="0">0</br>
+                          <br><input type="radio" name="pregunta_2_4" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_2_4" value="2">2</br>
+                          <br><input type="radio" name="pregunta_2_4" value="3">3</br>
+                          <br><input type="radio" name="pregunta_2_4" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_tres"></a>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label><h2>Organizar, administrar, planear y controlar las actividades de mantenimiento en plantas industriales.</h2></label>
+                        <label>3.1 Planear las actividades de mantenimiento en plantas industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_3_1" value="0">0</br>
+                          <br><input type="radio" name="pregunta_3_1" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_3_1" value="2">2</br>
+                          <br><input type="radio" name="pregunta_3_1" value="3">3</br>
+                          <br><input type="radio" name="pregunta_3_1" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>3.2 Organizar administrar y controlar las actividades de mantenimiento en plantas industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_3_2" value="0">0</br>
+                          <br><input type="radio" name="pregunta_3_2" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_3_2" value="2">2</br>
+                          <br><input type="radio" name="pregunta_3_2" value="3">3</br>
+                          <br><input type="radio" name="pregunta_3_2" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>3.3 Administrar las actividades de mantenimiento en plantas industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_3_3" value="0">0</br>
+                          <br><input type="radio" name="pregunta_3_3" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_3_3" value="2">2</br>
+                          <br><input type="radio" name="pregunta_3_3" value="3">3</br>
+                          <br><input type="radio" name="pregunta_3_3" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>3.4 Controlar las actividades de mantenimiento en plantas industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_3_4" value="0">0</br>
+                          <br><input type="radio" name="pregunta_3_4" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_3_4" value="2">2</br>
+                          <br><input type="radio" name="pregunta_3_4" value="3">3</br>
+                          <br><input type="radio" name="pregunta_3_4" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_cuatro"></a>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label><h2>Seleccionar, calcular, evaluar, operar y mantener instalaciones, máquinas y equipos térmicos e hidráulicos.</h2></label>
+                        <label>4.1 Seleccionar instalaciones, máquinas y equipos térmicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_1" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_1" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_1" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_1" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_1" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.2 Calcular instalaciones, máquinas y equipos térmicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_2" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_2" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_2" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_2" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_2" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.3 Evaluar instalaciones, máquinas y equipos térmicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_3" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_3" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_3" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_3" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_3" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.4 Operar y mantener instalaciones, máquinas y equipos térmicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_4" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_4" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_4" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_4" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_4" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.5 Seleccionar máquinas y redes hidráulicas.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_5" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_5" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_5" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_5" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_5" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.6 Calcular redes hidráulicas.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_6" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_6" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_6" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_6" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_6" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.7 Evaluar máquinas y redes hidráulicas.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_7" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_7" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_7" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_7" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_7" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>4.8 Operar y mantener máquinas y redes hidráulicas.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_4_8" value="0">0</br>
+                          <br><input type="radio" name="pregunta_4_8" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_4_8" value="2">2</br>
+                          <br><input type="radio" name="pregunta_4_8" value="3">3</br>
+                          <br><input type="radio" name="pregunta_4_8" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_cinco"></a>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label><h2>Seleccionar, calcular, evaluar, operar y mantener sistemas de medición, automatización y control de procesos industriales.</h2></label>
+                        <label>5.1 Calcular y diseñar los circuitos electrónicos para aplicaciones de medición, instrumentación y control de equipos industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_1" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_1" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_1" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_1" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_1" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.2 Seleccionar los componentes básicos normalizados que se requieren para aplicaciones de medición. Instrumentación y control de equipos industriales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_2" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_2" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_2" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_2" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_2" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.3 Analizar sistemas de control automático.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_3" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_3" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_3" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_3" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_3" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.4 Modelar componentes y sistemas de control automático.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_4" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_4" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_4" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_4" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_4" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.5 Diseñar y evaluar componentes y sistemas de control automático.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_5" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_5" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_5" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_5" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_5" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.6 Diseñar sistemas de automatización hidráulicos y neumáticos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_6" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_6" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_6" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_6" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_6" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.7 Operar y controlar sistemas de automatización hidráulicos y neumáticos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_7" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_7" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_7" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_7" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_7" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>5.8 Evaluar y mantener sistemas de automatización hidráulicos y neumáticos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_5_8" value="0">0</br>
+                          <br><input type="radio" name="pregunta_5_8" value="1">1</br>   
+                          <br><input type="radio" name="pregunta_5_8" value="2">2</br>
+                          <br><input type="radio" name="pregunta_5_8" value="3">3</br>
+                          <br><input type="radio" name="pregunta_5_8" value="4">4</br>  
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_seis"></a>
+
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label><h2>Por favor mencione otras funciones de trabajo que usted considera importantes en su trabajo como Ingeniero Mecánico:</h2></label>
+                            <textarea rows="5" class="form-control" placeholder="Funciones de trabajo" id="message" required data-validation-required-message="Please enter a message." name="pregunta_6"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label><p><h1>A CONTINUACION SE LISTAN LAS DESTREZAS (Que todo profesional Ingeniero debe poseer)  DEL INGENIERO MECANICO, marque con SI aquellas que usted considera son útiles en su trabajo:</h1><h2>DESTREZAS GENÉRICAS DEL INGENIERO MECANICO</h2></p></label>
+                        <label>•  Analizar, plantear, modelar y resolver problemas de ingeniería mediante el uso de las matemáticas.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_1" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_1" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Identificar, analizar y comprobar fenómenos físicos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_2" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_2" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Utilizar la Estadística y la probabilidad para analizar e interpretar los resultados de procesos experimentales y observaciones relacionadas con la ingeniería. </label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_3" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_3" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Construir algoritmos y programas de computación para resolver problemas básicos de ingeniería.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_4" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_4" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Aplicar métodos numéricos para solucionar problemas matemáticos.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_5" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_5" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Formular, ejecutar, administrar y evaluar proyectos de investigación en el área de la ingeniería.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_6" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_6" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Hablar y escribir de acuerdo con las normas gramaticales y formales y escuchar y leer de manera comprensiva, reflexiva y crítica.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_7" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_7" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Administrar parcial o totalmente organizaciones empresariales.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_8" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_8" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Preparar y evaluar proyectos de ingeniería en los niveles de prefactibilidad y factibilidad.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_9" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_9" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="row control-group">
+                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>•  Aplicar los principios de la ética en el comportamiento ciudadano y en el ejercicio profesional de la ingeniería.</label>
+                        <div class="radio" align="center">
+                          <br><input type="radio" name="pregunta_7_10" value="Si">Si</br>
+                          <br><input type="radio" name="pregunta_7_10" value="No">No</br>    
+                          <p class="help-block text-danger"></p>                    
+                        </div>                      
+                      </div>
+                    </div>
+                    <br>
+
+                    <a name="p_siete"></a>
+
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label><h2>Por favor mencione otras destrezas que usted considera importantes en el ejercicio de la Ingeniería  Mecánica:</h2></label>
+                            <textarea rows="5" class="form-control" placeholder="Destrezas" id="message" required data-validation-required-message="Please enter a message." name="pregunta_8"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-default">Send</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+      </div>
+        <!-- /.container -->
+    </div>
+
+    <a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Contactate con nosotros</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://www.facebook.com/groups/lamejorfacultaddelmundo/?fref=ts" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-inline">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li class="footer-menu-divider">&sdot;</li>
+              <li>
+                <a href="#acerca">Acerca de las encuestas</a>
+              </li>
+              <li class="footer-menu-divider">&sdot;</li>
+              <li>
+                <a href="#encuesta">Hacer encuesta</a>
+              </li>
+              <li class="footer-menu-divider">&sdot;</li>
+              <li>
+                <a href="#contact">Contactos</a>
+              </li>
+            </ul>
+            <p class="copyright text-muted small">Copyright &copy; M.D.O Company 2015. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./javascripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./javascripts/bootstrap.min.js"></script>
+  </body>
+  </html>
+
+
