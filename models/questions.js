@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
 var questionSchema = new Schema({
-	 	  Nombre : { type : String },
+	Nombre : { type : String },
 		  Email : { type : String},
 		  Tel : {type : String},
+		  TipoEmpresaPP : {type : String},
 		  TipoEmpresa : {type : String},
 		  DescripActividad : {type : String},
 		  pregunta_1_1:  {type: String},
@@ -50,6 +52,10 @@ var questionSchema = new Schema({
 		  pregunta_7_10:  {type: String},
 		  pregunta_8:  {type: String},
 		  createdAt : { type : Date, default : Date.now}
+	 	  
 })
+
+
+
 
 module.exports = mongoose.model('Questions', questionSchema)

@@ -9,10 +9,11 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-mongoose.connect('mongodb://localhost/questions', function(err, res){
-  if(err) console.log('Error: to connecting to Database students. ' + err)
+mongoose.connect('mongodb://localhost/questions1', function(err, res){
+  if(err) console.log('Error: to connecting to Database. ' + err)
   else console.log('Connected to Database students')
 })
+
 
 
 var app = express();
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/success', routes);
+app.use('/exportData', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,6 +41,7 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
 
 // error handlers
 
