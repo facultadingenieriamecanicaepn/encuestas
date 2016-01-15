@@ -31,6 +31,10 @@ router.get('/success', function(req, res) {
   res.render('success');
 });
 
+router.get('/login', function(req, res) {
+  res.render('login', {});
+});
+
 createNewQuiz = function (req, res){
 	console.log(req.body)
 	questionsdb.createNewQuiz( req, function (err, questions){
