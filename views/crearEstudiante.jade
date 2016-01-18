@@ -7,7 +7,7 @@ html.
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>login</title>
+    <title>Registrar</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -22,18 +22,44 @@ html.
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h1 class="text-center">Login</h1>
+        <h1 class="text-center">Registro Estudiante</h1>
       </div>
       <div class="modal-body">
         <form class="form col-md-12 center-block">
           <div class="form-group">
+            <input type="text" class="form-control input-lg" placeholder="Nombres">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg" placeholder="Apellidos">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control input-lg" placeholder="Identificación | Cédula de ciudadanía">
+          </div>
+          <div class="form-group">Genero
+            <select class="form-control">
+              <option disabled>Genero</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+            </select>
+          </div>
+          <div class="form-group">
+          <div class="form-group">
             <input type="text" class="form-control input-lg" placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control input-lg" placeholder="Password">
+            <input type="text" class="form-control input-lg" placeholder="Empresa en donde esta haciendo la pasantia">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+            <input type="text" class="form-control input-lg" placeholder="Telefono de contacto">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-lg" placeholder="Password | Contraseña">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-lg" placeholder="Confirm Password | Canfirmar Contraseña">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-lg btn-block">Enviar</button>
             <span class="pull-right"><a href="#">Registro</a></span><span><a href="#">Necesitas Ayuda?</a></span>
           </div>
         </form>
