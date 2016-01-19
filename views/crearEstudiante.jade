@@ -4,74 +4,113 @@ html.
 
   <!DOCTYPE html>
   <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Registrar</title>
-    <meta name="generator" content="Bootply" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro Estudiante</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./stylesheets/form-elements.css">
     <link href="./stylesheets/style.css" rel="stylesheet">
+  <head>
+    <title></title>
   </head>
   <body>
-  <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h1 class="text-center">Registro Estudiante</h1>
-      </div>
-      <div class="modal-body">
-        <form class="form col-md-12 center-block">
-          <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Nombres">
+  <!-- Top content -->
+        <div class="top-content">
+          
+            <div class="inner-bg">
+                <div class="container">
+                  
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>FIM</strong> Registro de Estudiantes</h1>
+                            <div class="description">
+                              <p>
+                                Por favor llena todos los espacios requeridos.
+                              </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                          
+                        <div class="col-sm-5">
+                          
+                          <div class="form-box">
+                            <div class="form-top">
+                              <div class="form-top-left">
+                                <h3>Atención</h3>
+                                  <p>Todos tus datos son confidenciales, por favor llenalos lo mas actualizado y verídicamente posibles</p>
+                              </div>
+                              <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                              </div>
+                              </div>
+                              <div class="form-bottom">
+                            <form role="form" action="" method="post" class="registration-form">
+                              <div class="form-group">
+                                <label class="sr-only" for="form-first-name">Nombre</label>
+                                  <input type="text" name="form-first-name" placeholder="Nombres completos..." class="form-first-name form-control" id="form-first-name">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-last-name">Apellidos</label>
+                                  <input type="text" name="form-last-name" placeholder="Apellidos completos..." class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-id">Identificacion</label>
+                                  <input type="text" name="form-id" placeholder="Identificacion..." class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-email">Email</label>
+                                  <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-phone">Contacto</label>
+                                  <input type="text" name="form-phone" placeholder="Numero telefonico de contacto..." class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <button type="submit" class="btn">Enviar formulario</button>
+                            </form>
+                          </div>
+                          </div>
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <div class="footer-border"></div>
+                <p>Copyright &copy; M.D.O Company 2015. All Rights Reserved</p>
+              </div>
+              
+            </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Apellidos">
-          </div>
-          <div class="form-group">
-            <input type="number" class="form-control input-lg" placeholder="Identificación | Cédula de ciudadanía">
-          </div>
-          <div class="form-group">Genero
-            <select class="form-control">
-              <option disabled>Genero</option>
-              <option>Masculino</option>
-              <option>Femenino</option>
-            </select>
-          </div>
-          <div class="form-group">
-          <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Empresa en donde esta haciendo la pasantia">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Telefono de contacto">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control input-lg" placeholder="Password | Contraseña">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control input-lg" placeholder="Confirm Password | Canfirmar Contraseña">
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-lg btn-block">Enviar</button>
-            <span class="pull-right"><a href="#">Registro</a></span><span><a href="#">Necesitas Ayuda?</a></span>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <div class="col-md-12">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-      </div>
-    </div>
-    </div>
-  </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="./javascripts/bootstrap.min.js"></script>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="./javascripts/jquery-1.11.1.min.js"></script>
+        <script src="./javascripts/bootstrap.min.js"></script>
+        <script src="./javascripts/jquery.backstretch.min.js"></script>
+        <script src="./javascripts/scripts.js"></script>
+        
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
   </body>
   </html>
