@@ -39,6 +39,10 @@ router.get('/registroEstudiante', function(req, res) {
   res.render('crearEstudiante', {});
 });
 
+router.get('/perfil', function(req, res) {
+  res.render('profile', {});
+});
+
 createNewQuiz = function (req, res){
 	console.log(req.body)
 	questionsdb.createNewQuiz( req, function (err, questions){
