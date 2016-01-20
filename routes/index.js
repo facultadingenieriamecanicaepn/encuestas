@@ -43,6 +43,10 @@ router.get('/perfil', function(req, res) {
   res.render('profile', {});
 });
 
+router.get('/panel', function(req, res) {
+  res.render('panel', {});
+});
+
 createNewQuiz = function (req, res){
 	console.log(req.body)
 	questionsdb.createNewQuiz( req, function (err, questions){

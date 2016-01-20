@@ -37,6 +37,7 @@ app.use('/exportData', routes);
 app.use('/login' , routes);
 app.use('/registroEstudiante' , routes);
 app.use('/perfil' , routes);
+app.use('/panel' , routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
