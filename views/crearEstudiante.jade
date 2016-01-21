@@ -54,32 +54,40 @@ html.
                               </div>
                               </div>
                               <div class="form-bottom">
-                            <form role="form" action="" method="post" class="registration-form">
+                            <form role="form" action="/students/student" method="post" class="registration-form">
                               <div class="form-group">
                                 <label class="sr-only" for="form-first-name">Nombre</label>
-                                  <input type="text" name="form-first-name" placeholder="Nombres completos..." class="form-first-name form-control" id="form-first-name">
+                                  <input type="text" name="studentName" placeholder="Nombres completos..." class="form-first-name form-control" id="form-first-name">
                                 </div>
                                 <div class="form-group">
                                   <label class="sr-only" for="form-last-name">Apellidos</label>
-                                  <input type="text" name="form-last-name" placeholder="Apellidos completos..." class="form-last-name form-control" id="form-last-name">
+                                  <input type="text" name="studentLastName" placeholder="Apellidos completos..." class="form-last-name form-control" id="form-last-name">
                                 </div>
                                 <div class="form-group">
                                   <label class="sr-only" for="form-id">Identificacion</label>
-                                  <input type="text" name="form-id" placeholder="Identificacion..." class="form-last-name form-control" id="form-last-name">
+                                  <input type="text" name="studentIdent" placeholder="Identificacion..." class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-id">Password</label>
+                                  <input type="password" name="studentPassword" placeholder="Password..." class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                  <label class="sr-only" for="form-id">RePassword</label>
+                                  <input type="password" name="" placeholder="Repita Password..." class="form-last-name form-control" id="form-last-name">
                                 </div>
                                 <div class="form-group">
                                   <label class="sr-only" for="form-email">Email</label>
-                                  <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                  <input type="text" name="studentEmail" placeholder="Email..." class="form-email form-control" id="form-email">
                                 </div>
                                 <div class="form-group">
                                   <label class="sr-only" for="form-phone">Contacto</label>
-                                  <input type="text" name="form-phone" placeholder="Numero telefonico de contacto..." class="form-last-name form-control" id="form-last-name">
+                                  <input type="text" name="studentPhone" placeholder="Numero telefonico de contacto..." class="form-last-name form-control" id="form-last-name">
                                 </div>
                                 <div class="form-group">
-                                  <select>
+                                  <select name="studentGenere">
                                     <label>Genero</label>
-                                    <option>Masculino</option>
-                                    <option>Femenino</option>
+                                    <option value='male'>Masculino</option>
+                                    <option value='female'>Femenino</option>
                                   </select>                                  
                                 </div>
                                 <button type="submit" class="btn">Enviar formulario</button>

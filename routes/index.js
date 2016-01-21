@@ -47,6 +47,10 @@ router.get('/panel', function(req, res) {
   res.render('panel', {});
 });
 
+router.get('/acercaDe', function(req, res){
+	res.render('acercaDe',{})
+})
+
 createNewQuiz = function (req, res){
 	console.log(req.body)
 	questionsdb.createNewQuiz( req, function (err, questions){

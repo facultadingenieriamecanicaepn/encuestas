@@ -8,6 +8,9 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var students  =  require('./routes/students');
+//var tutors    =  require('./routes/tutors');
+
 
 mongoose.connect('mongodb://localhost/questions1', function(err, res){
   if(err) console.log('Error: to connecting to Database. ' + err)
@@ -38,6 +41,11 @@ app.use('/login' , routes);
 app.use('/registroEstudiante' , routes);
 app.use('/perfil' , routes);
 app.use('/panel' , routes);
+app.use('/acercaDe', routes);
+
+app.use('/students', students);
+//app.use('/tutors', tutors);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
