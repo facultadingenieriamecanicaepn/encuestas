@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var loggerW = require('./lib/logger');
+var ip = require('ip');
+
+loggerW.info("La ip conectada es: " + ip.address());
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
